@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+.grid {
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+  "h h"
+  "c c";
+
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 6fr 6fr;
+  /* grid-gap: 10px; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.add-wrapper-content {
+  grid-area: c;
+  background-color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.bannerCss{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 4%;
+}
+
+.bannerCss img {
+  width: 74%;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hacs{
+  width: 17%;
+  padding: 1%;
+}
+
+.text{
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 150%;
+  margin-top: 4%
 }
 
-.App-link {
-  color: #61dafb;
+.button{
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin-left: 12%;
+}
+.button img {
+  width: 10%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.vector{
+  width: 100%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.partners{
+  width: 100%;
+  margin-top: 3%;
+  margin-right: 5%;
+}
+
+.arr{
+  width: 3%;
+}
+
+.team{
+  width: 74%;
+  padding: 2%;
+}
+
+.joinbutton{
+  margin-bottom: 4%;
+  width: 74%;
 }

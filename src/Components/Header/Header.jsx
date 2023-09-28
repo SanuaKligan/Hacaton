@@ -1,33 +1,69 @@
-import React from "react";
-// import classes from "./Header.module.css";
-import {NavLink} from "react-router-dom";
-const {classes} = require("./Header.module.css");
+import React from "react"
+import classes from "./Header.module.css"
+import {NavLink} from "react-router-dom"
+import telegram from "../../images/Телеграм.png"
+import discord from "../../images/Дискорд.png"
+import HACRT from "../../images/ХАKATOНЫ.РТ.png"
+import logIn from "../../images/Войти.png"
+import Calen from "../../images/Календарь.png"
+import ev from "../../images/События.png"
+import knb from "../../images/База знаний.png"
+import nws from "../../images/Новости.png"
+import abus from "../../images/О нас.png"
 
-type HeaderProps = {
-    isAuth: boolean
-    login: string | null
-    logOut: () => void
-}
-
-const Header: React.FC<HeaderProps> = (props) => {
+const Header = () => {
     return (
-        <header
-            className={
-            classes.header
-        }>
-            <div>
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/ru/c/cf/%D0%9B%D0%BE%D0%B1%D0%BE%D1%81_%D0%A3%D0%9F%D0%9D%D0%A4%D0%9C_%28%D0%BB%D0%BE%D0%B3%D0%BE%29.png"
-                />
-                Социальная паутина
-                <div className={classes.authBlock}>
-                    {
-                        props.isAuth
-                        ? <div>{props.login} <div><button onClick={props.logOut}>Log out</button></div></div>
-                        : <NavLink to = {"/login"}>
-                            Login
+        <header className={classes.header}>
+            <div className={classes.container}>
+                <div className={classes.left}>
+                    <div className={classes.item}>
+                        <img className = {classes.logoHacRT} src={HACRT}/>
+                    </div>
+                </div>
+                <div className={classes.center}>
+                    <div className={classes.item}>
+                        <NavLink to={"/calendar"}>
+                            <img className={classes.menutext} src={Calen}/>
                         </NavLink>
-                    }
+                    </div>
+                    <div className={classes.item}>
+                        <NavLink to="/events">
+                            <img className={classes.menutext} src={ev}/>
+                        </NavLink>
+                    </div>
+                    <div className={classes.item}>
+                        <NavLink to="/knowledge-base">
+                            <img className={classes.menutext} src={knb}/>
+                        </NavLink>
+                    </div>
+                    <div className={classes.item}>
+                        <NavLink to="/news">
+                            <img className={classes.menutext} src={nws}/>
+                        </NavLink>
+                    </div>
+                    <div className={classes.item}>
+                        <NavLink to="about-us">
+                            <img className={classes.menutext} src={abus}/>
+                        </NavLink>
+                    </div>
+                </div>
+                <div className={classes.right}>
+                    <div className={classes.item}>
+                        <NavLink to="/https://t.me/hack_rt">
+                            <img className={classes.minilogo} src={telegram}/>
+                        </NavLink>
+                    </div>
+                    <div className={classes.item}>
+                        <NavLink to="https://discord.gg/rWGheacb">
+                            <img className={classes.minilogo} src={discord}/>
+                        </NavLink>
+                    </div>
+                    <div className={classes.item}>
+                        <NavLink to="https://web.telegram.org/k/#@hackhatonrt_bot"
+                                 className={classes.item}>
+                            <img className={classes.logIn} src={logIn}/>
+                        </NavLink>
+                    </div>
                 </div>
             </div>
         </header>
